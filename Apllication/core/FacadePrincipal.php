@@ -34,6 +34,9 @@ class FacadePrincipal {
     public function produtoController(){
         return new ProdutoController();
     }
+    public function fornecedorController(){
+        return new FornecedorController();
+    }
 
 }
 
