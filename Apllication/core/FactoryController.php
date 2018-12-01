@@ -82,7 +82,7 @@ class FactoryController {
                 return $_GET['method'];
             
             //Executa o method
-            $this->controller->$_GET['method']($this->attributes);
+            $this->controller->{$_GET['method']}($this->attributes);
             
         } catch (Exception $e) {
             echo "<br>" . $e->getMessage();

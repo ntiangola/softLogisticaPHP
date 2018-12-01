@@ -18,7 +18,7 @@ class StringUtil {
     }
     
     public function __destruct() {
-        unset ($this);
+        #unset ($this);
     }
 }
 
