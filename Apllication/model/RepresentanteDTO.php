@@ -15,6 +15,9 @@ class RepresentanteDTO extends AbstractDTO {
     public $id;
     public $idFornecedor;
     public $nome;
+    public $bairro;
+    public $email;
+    public $cidade;
     
     function getId() {
         return $this->id;
@@ -26,6 +29,18 @@ class RepresentanteDTO extends AbstractDTO {
 
     function getNome() {
         return $this->nome;
+    }
+
+    function getBairro() {
+        return $this->bairro;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getCidade() {
+        return $this->cidade;
     }
 
     function setId($id) {
@@ -40,7 +55,19 @@ class RepresentanteDTO extends AbstractDTO {
         $this->nome = $nome;
     }
 
-public function __construct($c = __CLASS__) {
+    function setBairro($bairro) {
+        $this->bairro = $bairro;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setCidade($cidade) {
+        $this->cidade = $cidade;
+    }
+
+    public function __construct($c = __CLASS__) {
         parent::__construct($c);
     }
 }

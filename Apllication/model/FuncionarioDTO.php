@@ -7,56 +7,66 @@
  */
 
 /**
- * Description of ProdutoDTO
+ * Description of FuncionarioDTO
  *
  * @author Venan
  */
-class ProdutoDTO extends AbstractDTO {
+class FuncionarioDTO extends AbstractDTO {
     public $id;
-    public $categoria;
     public $nome;
+    public $cargo;
+    public $departamento;
     
     function getId() {
         return $this->id;
-    }
-
-    function getCategoria() {
-        return $this->categoria;
     }
 
     function getNome() {
         return $this->nome;
     }
 
-    function setId($id) {
-        $this->id = $id;
+    function getCargo() {
+        return $this->cargo;
     }
 
-    function setCategoria($categoria) {
-        $this->categoria = $categoria;
+    function getDepartamento() {
+        return $this->departamento;
+    }
+
+    function setId($id) {
+        $this->id = $id;
     }
 
     function setNome($nome) {
         $this->nome = $nome;
     }
+
+    function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
+
+    function setDepartamento($departamento) {
+        $this->departamento = $departamento;
+    }
     
-        public function findAll() {
+    
+            public function findAllFuncionario() {
         $queryString = "SELECT *
-                        FROM produto 
+                        FROM funcionario
                         ";
            $query = $this->Connection()->query($queryString);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
-        public function findAllProdById($id) {
+        public function findFuncionarioById($id) {
         $queryString = "SELECT *
-                        FROM produto 
+                        FROM funcionario 
                         WHERE id='$id'
                         ";
            $query = $this->Connection()->query($queryString);
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 
-   public function __construct($c = __CLASS__) {
+public function __construct($c = __CLASS__) {
         parent::__construct($c);
     }
 }

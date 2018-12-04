@@ -23,6 +23,23 @@ class FornecedorController extends AbstractController {
         
         
     }
+    public function excluir($a){
+        $dto = $this->setAttributes($a);
+        $dto['FornecedorDTO']->delete();
+        $dto['RepresentanteDTO']->delete();
+        
+    }
+    public function actualizarFornecedor($a){
+        $dto = $this->setAttributes($a);
+        if ($dto['FornecedorDTO']->exist('id')) {
+           $dto['RepresentanteDTO']->setIdFornecedor($dto['FornecedorDTO']->getId());
+            
+            $dto['FornecedorDTO']->update('id');
+            $dto['RepresentanteDTO']->update('idFornecedor');
+           }
+        #header('location: Pages/Produtos/index.php?id='.$dto['ProdutoDTO']->getId());
+        
+    }
 
         public function __construct($c = __CLASS__) {
         parent::__construct($c);

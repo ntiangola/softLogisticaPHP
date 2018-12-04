@@ -37,6 +37,12 @@ class FacadePrincipal {
     public function fornecedorController(){
         return new FornecedorController();
     }
+    public function funcionarioController(){
+        return new FuncionarioController();
+    }
+    public function requisicaoController(){
+        return new RequisicaoController();
+    }
 
 }
 
